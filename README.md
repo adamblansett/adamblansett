@@ -23,10 +23,18 @@ Self-hosted, privacy-first AI systems built around local open-weight models, PII
 | Project | What it does |
 |---|---|
 | [ai-paralegal](https://github.com/adamblansett/ai-paralegal) | Legal ops platform for OCR document ingestion, playbook contract review with Word Track Changes redlines, citation-backed research Q&A, PII/privilege guardrails, Bates stamping, and attorney review (FastAPI, pgvector, Celery, React) |
+| [ai-finance-ops](https://github.com/adamblansett/ai-finance-ops) | *(In active development)* Self-hosted AI finance operations platform for invoice reconciliation, AP/AR matching, cash flow forecasting, and expense auditing with controller approval gates and cloud PII redaction (FastAPI, pgvector, React) |
 | [ai-recruiter](https://github.com/adamblansett/ai-recruiter) | Job discovery, DNS-verified recruiter lookup, LLM fit evaluation, and Gmail outreach behind a human approval gate (FastAPI, Celery, React) |
 | [ai-hr-platform](https://github.com/adamblansett/ai-hr-platform) | Standalone HR microservice for full employee lifecycle operations (integrates with `ai-recruiter`), RAG policy Q&A, leave/benefits/LMS, expense auditing, and performance reviews (FastAPI, pgvector, React) |
 | [ai-customer-service](https://github.com/adamblansett/ai-customer-service) | Self-hosted AI contact center for inbound voice (Twilio/SIP/FreeSWITCH, sub-500ms barge-in) and web chat with human escalation (Next.js, Express) |
 | [virtual-assistant](https://github.com/adamblansett/virtual-assistant) | Privacy-first autonomous executive assistant on local LLMs (Ollama/vLLM) with MCP tools and Telegram/Slack/WhatsApp approvals (Next.js) |
+
+### Expanding autonomous AI workforce roadmap
+
+Additional open-source (MIT) starter repositories initialized with FastAPI, PostgreSQL/pgvector, React, Docker Compose, and CI/security baselines for staged build-out:
+
+- **Phase 1 — Core Professional & Enterprise Operations:** [ai-sdr](https://github.com/adamblansett/ai-sdr) (outbound prospecting & pipeline hygiene) · [ai-it-admin](https://github.com/adamblansett/ai-it-admin) (user provisioning, health monitoring & incident triage) · [ai-insurance-ops](https://github.com/adamblansett/ai-insurance-ops) (policy intake, claims triage & underwriting support) · [ai-logistics-coordinator](https://github.com/adamblansett/ai-logistics-coordinator) (freight tracking, route optimization & inventory alerts)
+- **Phase 2 — Administrative, Quality & Governance:** [ai-admin-agent](https://github.com/adamblansett/ai-admin-agent) (executive scheduling & briefing prep) · [ai-qa-release-engineer](https://github.com/adamblansett/ai-qa-release-engineer) (E2E test generation & release verification) · [ai-compliance-auditor](https://github.com/adamblansett/ai-compliance-auditor) (SOC2/HIPAA/GDPR governance checks) · [ai-procurement-manager](https://github.com/adamblansett/ai-procurement-manager) (vendor comparison & PO validation) · [ai-localization-manager](https://github.com/adamblansett/ai-localization-manager) (multi-locale sync & translation QA) · [ai-data-governance](https://github.com/adamblansett/ai-data-governance) (PII masking, deduplication & schema hygiene)
 
 ## Open-source developer tools
 
