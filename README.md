@@ -77,4 +77,4 @@ All 10 MIT-licensed enterprise operations MVPs below are implemented on a shared
 
 ---
 
-Need help with a production problem, a new build, or private AI on your own infrastructure? [Book a free 30-minute call](https://adamblansett.com/book/) or see my [48-hour codebase audit](https://adamblansett.com/services/).
+Need help with a production problem, a new build, or private AI on your own infrastructure? [Book a free 30-minute call](https://adamblansett.com/book/) or try the [48-hour codebase audit portal](https://audit.adamblansett.com/).
