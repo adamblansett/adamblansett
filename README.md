@@ -20,21 +20,33 @@ I've spent 10+ years building and modernizing enterprise software in banking, he
 
 Self-hosted, privacy-first AI systems built around local open-weight models, PII/privilege guardrails, and human-in-the-loop approvals.
 
+### Flagship AI platforms
+
 | Project | What it does |
 |---|---|
 | [ai-paralegal](https://github.com/adamblansett/ai-paralegal) | Legal ops platform for OCR document ingestion, playbook contract review with Word Track Changes redlines, citation-backed research Q&A, PII/privilege guardrails, Bates stamping, and attorney review (FastAPI, pgvector, Celery, React) |
-| [ai-finance-ops](https://github.com/adamblansett/ai-finance-ops) | *(In active development)* Self-hosted AI finance operations platform for invoice reconciliation, AP/AR matching, cash flow forecasting, and expense auditing with controller approval gates and cloud PII redaction (FastAPI, pgvector, React) |
+| [ai-finance-ops](https://github.com/adamblansett/ai-finance-ops) | Self-hosted AI finance operations platform implementing PDF/CSV/JSON ingestion with SHA-256 dedup, 3-way PO/GR/invoice reconciliation, AP/AR settlement matching, 13-week cash flow & scenario modeling, expense auditing, and SHA-256 SOX audit chains behind Controller approval gates (FastAPI, pgvector, Redis, React) |
 | [ai-recruiter](https://github.com/adamblansett/ai-recruiter) | Job discovery, DNS-verified recruiter lookup, LLM fit evaluation, and Gmail outreach behind a human approval gate (FastAPI, Celery, React) |
 | [ai-hr-platform](https://github.com/adamblansett/ai-hr-platform) | Standalone HR microservice for full employee lifecycle operations (integrates with `ai-recruiter`), RAG policy Q&A, leave/benefits/LMS, expense auditing, and performance reviews (FastAPI, pgvector, React) |
-| [ai-customer-service](https://github.com/adamblansett/ai-customer-service) | Self-hosted AI contact center for inbound voice (Twilio/SIP/FreeSWITCH, sub-500ms barge-in) and web chat with human escalation (Next.js, Express) |
+| [ai-customer-service](https://github.com/adamblansett/ai-customer-service) | Self-hosted AI contact center for inbound voice (Twilio/SIP/FreeSWITCH, sub-500ms barge-in) and web chat with human escalation (Next.js 16, Express) |
 | [virtual-assistant](https://github.com/adamblansett/virtual-assistant) | Privacy-first autonomous executive assistant on local LLMs (Ollama/vLLM) with MCP tools and Telegram/Slack/WhatsApp approvals (Next.js) |
 
-### Expanding autonomous AI workforce roadmap
+### Autonomous AI workforce platforms (Phase 1 & Phase 2 MVPs)
 
-Additional open-source (MIT) starter repositories initialized with FastAPI, PostgreSQL/pgvector, React, Docker Compose, and CI/security baselines for staged build-out:
+All 10 MIT-licensed enterprise operations MVPs below are implemented on a shared FastAPI / SQLAlchemy 2.0 / PostgreSQL (`pgvector`) / React 18 / TypeScript stack featuring local-first Ollama inference + offline mock modes, default cloud PII redaction (`LLM_REDACT_PII_FOR_CLOUD=true`), HITL approval gates, SHA-256 hash-chained audit trails, Docker Compose, and GitHub Actions CI (`ruff`, `mypy`, `pytest`, `vitest`, `npm audit`, Trivy):
 
-- **Phase 1 — Core Professional & Enterprise Operations:** [ai-sdr](https://github.com/adamblansett/ai-sdr) (outbound prospecting & pipeline hygiene) · [ai-it-admin](https://github.com/adamblansett/ai-it-admin) (user provisioning, health monitoring & incident triage) · [ai-insurance-ops](https://github.com/adamblansett/ai-insurance-ops) (policy intake, claims triage & underwriting support) · [ai-logistics-coordinator](https://github.com/adamblansett/ai-logistics-coordinator) (freight tracking, route optimization & inventory alerts)
-- **Phase 2 — Administrative, Quality & Governance:** [ai-admin-agent](https://github.com/adamblansett/ai-admin-agent) (executive scheduling & briefing prep) · [ai-qa-release-engineer](https://github.com/adamblansett/ai-qa-release-engineer) (E2E test generation & release verification) · [ai-compliance-auditor](https://github.com/adamblansett/ai-compliance-auditor) (SOC2/HIPAA/GDPR governance checks) · [ai-procurement-manager](https://github.com/adamblansett/ai-procurement-manager) (vendor comparison & PO validation) · [ai-localization-manager](https://github.com/adamblansett/ai-localization-manager) (multi-locale sync & translation QA) · [ai-data-governance](https://github.com/adamblansett/ai-data-governance) (PII masking, deduplication & schema hygiene)
+| Phase | Platform | Implemented MVP Capabilities |
+|---|---|---|
+| Phase 1 | [ai-sdr](https://github.com/adamblansett/ai-sdr) | Outbound prospecting & verified buying signals with retroactive opt-out suppression, 5-dimension ICP (`A`–`D`) + BANT/MEDDIC scoring, manager-gated sequences, CRM hygiene & HITL dedup merges, and HMAC CRM webhooks |
+| Phase 1 | [ai-it-admin](https://github.com/adamblansett/ai-it-admin) | Joiner/mover/leaver SCIM 2.0 dry-run provisioning diffs, service telemetry & TLS/quota incident triage, SaaS access/MFA audits, and `advisory_only` hybrid vector+keyword runbooks RAG behind IT approver RBAC |
+| Phase 1 | [ai-insurance-ops](https://github.com/adamblansett/ai-insurance-ops) | ACORD/policy clause indexing & hybrid search, FNOL claims triage & weighted SIU scoring, citation-grounded coverage verification, 3/5-year loss-run underwriting risk analysis, and PII/PHI redaction sandbox |
+| Phase 1 | [ai-logistics-coordinator](https://github.com/adamblansett/ai-logistics-coordinator) | HMAC carrier webhook & X12 EDI 214 freight tracking, multi-constraint carrier route optimization, `409`-enforced HITL carrier comms approval gate, and ASN/BOL warehouse shrinkage reconciliation |
+| Phase 2 | [ai-admin-agent](https://github.com/adamblansett/ai-admin-agent) | IANA timezone-aware multi-party scheduling solver, corporate travel policy & disruption contingency planner, cited pre-meeting briefing dossiers, and `P0`–`P3` SLA correspondence triage with HITL draft approvals |
+| Phase 2 | [ai-qa-release-engineer](https://github.com/adamblansett/ai-qa-release-engineer) | OpenAPI 3.x & user-flow Playwright TypeScript + `pytest`/`httpx` E2E test synthesis, CI failure root-cause triage + GitHub Actions security audits (`WF001`–`WF008`), LLM-eval regression checks, and SSRF-guarded Go/No-Go release gates |
+| Phase 2 | [ai-compliance-auditor](https://github.com/adamblansett/ai-compliance-auditor) | 18-control SOC 2 TSC / HIPAA / GDPR registry, deterministic config/encryption/logging/RBAC/SOP policy scanners, tamper-evident evidence bundle verification, and 30-day DSAR workflows with `409` legal-hold blocks |
+| Phase 2 | [ai-procurement-manager](https://github.com/adamblansett/ai-procurement-manager) | 8-family MSA/DPA/Order Form playbook contract diffing, P25/median/P75 SKU/SaaS pricing benchmarks, quote-to-PO budget validation with tiered approvals, and renewal deadline renegotiation workflows |
+| Phase 2 | [ai-localization-manager](https://github.com/adamblansett/ai-localization-manager) | Round-trip JSON/PO/Flutter ARB/Markdown catalog sync, `pgvector` semantic translation memory & DNT termbases, ICU/placeholder/HTML/RTL BiDi/formality QA, pseudo-localization, and CI missing-key release gates |
+| Phase 2 | [ai-data-governance](https://github.com/adamblansett/ai-data-governance) | Checksum-validated PII detection (`redact`/`mask`/`hash` + HKDF/Fernet vault `tokenize`/`detokenize`), Jaro-Winkler/Soundex undoable HITL record deduplication, E.164/USPS/ISO normalizers, and PostgreSQL schema hygiene audits |
 
 ## Open-source developer tools
 
